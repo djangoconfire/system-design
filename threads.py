@@ -32,7 +32,7 @@ def singleThreadResponse():
         req = Request(url,headers=headers)
         resp = urlopen(req)
         print (resp.getcode())
-    
+
     print ("Elapsed time - ",format(time.time() - start))
 
 # Multi Threaded Way 
@@ -40,7 +40,7 @@ class GetUrlThread(Thread):
     def __init__(self,url):
         self.url = url 
         super(GetUrlThread,self).__init__()
-    
+        
     def run(self):
         headers={'User-Agent' : 'my bot'}
         req = Request(self.url, headers=headers)
@@ -65,6 +65,14 @@ def multiThreadResponse():
             - to wait for this particular thread to finish before the main thread can execute the next instruction.
             - We call join() on all the threads, 
             - so elapsed time will be printed only after all the threads have run.
+            
+            some more things aboout Thread
+                - Processor might not execute run() of a thread immediately after start().
+                - You can’t say in which order run() of different threads will be called.
+                - For a specific thread, it’s guaranteed that the statements 
+                - inside run() will be executed sequentially.
+                - It means that first the the url associated with the 
+                - thread will be fetched and only then the recieved response will be printed.
     """
     urls = [
         'http://www.google.com', 
