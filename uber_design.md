@@ -1,42 +1,38 @@
-- System design
-	- Uber
-		- Requirements / Specifications
-			- Two Services
-				- Demand Service
-					- Demand of Riders
-						-  DemandService tracks the GPS locations of the user when requested. 
-						-  It tracks the order of requirements : Does user requested small/Big Car or pool.
-				- Supply Service 
-					-  Supply of Cabs
-					-  Supply service tracks car using GeoLocation(Lat and Longitude).
- 	 				-  Every cab which is active keep on sending lat and lang every 5 sec to the server.
-					-  State machines of all the supply  should be saved in the memory. 
- 					-  To track vehicles : There are may attributes of model
-						-  type of model
-						-  can be wheel chair be fittee
-						-  Number of sheets
-						-  Presence of a car sheet for children 
-					-  Allocation need to be tracked
-						-  If car have three sheets and two of them has been occupied.
-				- We need one more service which match the demand to supply ,say Dispatch System (Disco) 
- 				- Dispatch Optimization (Disco)
-					-  This service runs of Hundreds of Processes.
-					-  Core requirements of the service
-						- Reduce extra Driving
-						- Reduce Extra Waiting time 
-						- lowest overall ETA
-					- Working
-						- 
-			- Tools/Plugins
-                - Google S2 Library
-					
-		- Implementation
-			- 
-		- Database  7
-			- 
-	
-	-  Netflix
-	-  Whatsapp
-	-  DropBox 
+- Uber
+    - Requirements / Specifications
+        - Two Services
+            - Demand Service
+                - Demand of Riders
+                    -  DemandService tracks the GPS locations of the user when requested. 
+                    -  It tracks the order of requirements : Does user requested small/Big Car or pool.
+            - Supply Service 
+                -  Supply of Cabs
+                -  Supply service tracks car using GeoLocation(Lat and Longitude).
+                -  Every cab which is active keep on sending lat and lang every 5 sec to the server.
+                -  State machines of all the supply  should be saved in the memory. 
+                -  To track vehicles : There are may attributes of model
+                    -  type of model
+                    -  can be wheel chair be fittee
+                    -  Number of sheets
+                    -  Presence of a car sheet for children 
+                -  Allocation need to be tracked
+                    -  If car have three sheets and two of them has been occupied.
+            - We need one more service which match the demand to supply ,say Dispatch System (Disco) 
+            - Dispatch Optimization (Disco)
+                -  This service runs of Hundreds of Processes.
+                -  Core requirements of the service
+                    - Reduce extra Driving
+                    - Reduce Extra Waiting time 
+                    - lowest overall ETA
+                - Working 
+        - Tools/Plugins
+            - Google S2 Library
+                
+    - Implementation
+    - Database
+
+-  Netflix
+-  Whatsapp
+-  DropBox 
 
 - Elastic Search 
